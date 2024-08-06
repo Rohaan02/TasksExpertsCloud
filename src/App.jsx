@@ -31,7 +31,7 @@ function App() {
       <Header className="Calculator-head" />
       <div className="outDiv">
         <div className="task-Side">
-          <h3>Theme Changer</h3>
+          <h3>Theme Changer for check</h3>
           <ThemeToggle isDarkTheme={isDarkTheme} onToggle={handleThemeToggle} />
           <Calculator
             addHistory={addHistory}
