@@ -1,0 +1,22 @@
+.head{
+    background-color: rgb(34, 34, 34);
+    top: 0;
+    /* position: fixed; */
+    position: sticky; /* This keeps the header fixed at the top */
+    width: 100%;
+    display: flex;
+    color: whitesmoke;
+    z-index: 101;
+}
+
+.left-div{
+    padding: 20px 30px;
+    width: 50%;
+    
+}
+.right-div{
+    padding: 20px 30px;
+    width: 50%;
+    text-align: right;
+}
+

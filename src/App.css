@@ -1,0 +1,32 @@
+html, body {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+}
+
+.outDiv{
+  width: 100vw;
+  display: flex;
+  z-index: 100;
+}
+
+.task-Side{
+  width: 50%;
+  background-color: antiquewhite;
+  padding: 50px 0px;
+}
+
+.comments-Side{
+  width: 50%;
+  background-color: rgb(221, 250, 215);
+}
+
+.comments-Side li{
+  text-align: left;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
