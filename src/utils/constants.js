@@ -1,3 +1,4 @@
+//Calculator.jsx consts
 export const calculatorData = [
   {
     key: "AC",

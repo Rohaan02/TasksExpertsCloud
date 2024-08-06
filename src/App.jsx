@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Calculator from "./components/Calculator/Calculator.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
@@ -7,8 +7,14 @@ import "./App.css";
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(
+    JSON.parse(sessionStorage.getItem("calculatorHistory")) || []
+  );
   const [selectedHistory, setSelectedHistory] = useState([]);
+
+  useEffect(() => {
+    sessionStorage.setItem("calculatorHistory", JSON.stringify(history));
+  }, [history]);
 
   const handleThemeToggle = () => {
     setIsDarkTheme((prevTheme) => !prevTheme);
@@ -20,10 +26,15 @@ function App() {
 
   const handleHistoryClick = (calculation) => {
     const result = calculation.split(" = ")[1];
-    setSelectedHistory((prevSelectedHistory) => [
-      ...prevSelectedHistory,
-      result,
-    ]);
+    setSelectedHistory([result]); // Clear previous selected history
+  };
+
+  const ClearHistory = () => {
+    setHistory([]);
+  };
+
+  const clearInputValue = () => {
+    setSelectedHistory([]);
   };
 
   return (
@@ -36,10 +47,14 @@ function App() {
           <Calculator
             addHistory={addHistory}
             selectedHistory={selectedHistory}
+            clearInputValue={clearInputValue}
           />
         </div>
         <div className="comments-Side">
           <h3>History</h3>
+          <div className="cls-hst">
+            <button onClick={ClearHistory}>Clear History</button>
+          </div>
           <ul>
             {history.map((item, index) => (
               <li key={index} onClick={() => handleHistoryClick(item)}>

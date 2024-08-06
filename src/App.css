@@ -4,11 +4,11 @@ html, body {
   align-items: center;
   margin: 0;
   padding: 0;
-  min-width: 100%;
+  min-width: 100vw;
 }
 
 .outDiv{
-  width: 100vw;
+  width: 100%;
   display: flex;
   z-index: 100;
 }
@@ -29,4 +29,9 @@ html, body {
   cursor: pointer;
   font-size: 20px;
   margin-bottom: 15px;
+}
+
+.cls-hst{
+  display: flex;
+  justify-content: center;
 }

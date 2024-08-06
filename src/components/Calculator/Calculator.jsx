@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import "./Calculator.css";
 import { calculatorData } from "../../utils/constants";
 
-function Calculator({ addHistory, selectedHistory }) {
+function Calculator({ addHistory, selectedHistory, clearInputValue }) {
   const [value, setValue] = useState("");
   const [isResult, setIsResult] = useState(false);
 
@@ -10,10 +10,12 @@ function Calculator({ addHistory, selectedHistory }) {
     if (selectedHistory.length > 0) {
       const latestSelected = selectedHistory[selectedHistory.length - 1];
       setValue((prevValue) =>
-        prevValue ? `${prevValue}${latestSelected}` : latestSelected
+        isResult ? latestSelected : `${prevValue}${latestSelected}`
       );
+      clearInputValue();
+      setIsResult(false);
     }
-  }, [selectedHistory]);
+  }, [selectedHistory, clearInputValue, isResult]);
 
   const handleClick = useCallback(
     (e) => {
