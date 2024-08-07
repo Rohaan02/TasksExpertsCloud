@@ -4,7 +4,7 @@ html, body {
   align-items: center;
   margin: 0;
   padding: 0;
-  min-width: 100vw;
+  max-width: 100vw;
 }
 
 .outDiv{
@@ -34,4 +34,26 @@ html, body {
 .cls-hst{
   display: flex;
   justify-content: center;
+}
+
+
+/* Dark Theme style */
+.dark-theme .task-Side {
+  background-color: rgb(104, 68, 22);
+  color: white;
+}
+
+.dark-theme .comments-Side{
+  background-color: rgb(44, 114, 30);
+  color: white;
+}
+
+.dark-theme .comments-Side button{
+  background-color: rgb(100, 17, 17);
+  color: white;
+}
+.dark-theme .comments-Side button:hover{
+  background-color: black;
+  border: 1px solid white;
+  color: white;
 }

@@ -1,7 +1,14 @@
 .foot-main{
     text-align: center;
-    background-color: rgb(34, 34, 34);
-    color: whitesmoke;
+    background-color: rgb(216, 216, 216);
+    color: black;
+    /* border: 1px solid black; */
     padding: 20px;
     bottom: 0;
+}
+
+/* Dark Theme style */
+.dark-theme .foot-main{
+    background-color: rgb(34, 34, 34);
+    color: whitesmoke;
 }

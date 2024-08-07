@@ -30,7 +30,7 @@ export const calculatorData = [
   },
   {
     key: "*",
-    value: "*",
+    value: "x",
   },
   {
     key: "4",

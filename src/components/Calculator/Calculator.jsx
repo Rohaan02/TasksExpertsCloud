@@ -2,7 +2,12 @@ import React, { useCallback, useState, useEffect } from "react";
 import "./Calculator.css";
 import { calculatorData } from "../../utils/constants";
 
-function Calculator({ addHistory, selectedHistory, clearInputValue }) {
+function Calculator({
+  isDarkTheme,
+  addHistory,
+  selectedHistory,
+  clearInputValue,
+}) {
   const [value, setValue] = useState("");
   const [isResult, setIsResult] = useState(false);
 
@@ -59,11 +64,13 @@ function Calculator({ addHistory, selectedHistory, clearInputValue }) {
   }, [value, addHistory]);
 
   return (
-    <div className="TaskBody">
+    <div className={`TaskBody ${isDarkTheme ? "dark-theme" : "light-theme"}`}>
       <h2>-:Task: 1 :-</h2>
       <h3>Calculator which can perform DMAS</h3>
       <div className="main">
-        <div className="Calculator">
+        <div
+          className={`Calculator ${isDarkTheme ? "dark-theme" : "light-theme"}`}
+        >
           <form action="" onSubmit={(e) => e.preventDefault()}>
             <div className="solution">
               <input type="text" value={value} readOnly />

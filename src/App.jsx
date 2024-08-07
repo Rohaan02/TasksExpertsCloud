@@ -39,12 +39,13 @@ function App() {
 
   return (
     <div className={`Body ${isDarkTheme ? "dark-theme" : "light-theme"}`}>
-      <Header className="Calculator-head" />
+      <Header className="Calculator-head" isDarkTheme={isDarkTheme} />
       <div className="outDiv">
         <div className="task-Side">
           <h3>Theme Changer for check</h3>
           <ThemeToggle isDarkTheme={isDarkTheme} onToggle={handleThemeToggle} />
           <Calculator
+            isDarkTheme={isDarkTheme}
             addHistory={addHistory}
             selectedHistory={selectedHistory}
             clearInputValue={clearInputValue}
@@ -64,7 +65,7 @@ function App() {
           </ul>
         </div>
       </div>
-      <Footer />
+      <Footer isDarkTheme={isDarkTheme} />
     </div>
   );
 }
