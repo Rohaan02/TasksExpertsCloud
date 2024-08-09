@@ -1,27 +1,13 @@
-.head{
-    background-color: rgb(216, 216, 216);
-    /* border: 1px solid black; */
-    top: 0;
-    position: sticky;
-    width: 100%;
-    display: flex;
-    color: black;
-    z-index: 101;
-}
-
-.left-div{
-    padding: 20px 30px;
-    width: 50%;
-    text-align: left;
-}
-.right-div{
-    padding: 20px 30px;
-    width: 50%;
-    text-align: right;
-}
-
-/* Dark Theme style */
-.dark-theme .head{
-    background-color: rgb(34, 34, 34);
-    color: whitesmoke;
-}
+.text-style {
+    font-size: 1.125rem; /* equivalent to text-lg */
+    color: #4a4a4a; /* equivalent to text-gray-800 */
+  }
+  .text-style:hover{
+    text-decoration: underline;
+    color: #000000; /* equivalent to text-gray-800 */
+  }
+  
+  .dark .text-style {
+    color: white; /* equivalent to dark:text-white */
+  }
+  
